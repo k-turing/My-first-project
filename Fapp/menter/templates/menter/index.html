@@ -1,0 +1,70 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>INIAD MENTER | TOP PAGE</title>
+  <meta name="description" content="INIAD MENTERのトップページです。">
+  <link rel="stylesheet" href="static/css/style.css">
+  <link rel="stylesheet" href="static/css/normalize.css">
+  <link rel="stylesheet" href="static/js/jquery.bxslider/jquery.bxslider.css">
+  <script src="static/js/jquery-1.10.1.min.js"></script>
+  <script src="static/js/jquery.bxslider/jquery.bxslider.js"></script>
+  <script>
+    $(document).ready(function() {
+      $('.bxslider').bxSlider({
+        auto: true,
+        speed: 1000,
+        pause: 3000
+      });
+    });
+  </script>
+</head>
+
+<body>
+
+  <div id="page">
+
+    <header id="pageHead">
+      <!--タイトル-->
+      <h1 id="siteTitle"><a href="{% url 'index' %}"><b>INIAD MENTER</b></a></h1>
+      <!--各ページへのリンク-->
+      <nav class="glovalNavi">
+        <ul>
+          <li class="current"><a href="{% url 'index' %}">HOME</a></li>
+          <li><a href="{% url 'menter' %}">MENTER</a></li>
+          <li><a href="{% url 'comment' %}">COMMENT</a></li>
+          <li><a href="{% url 'contact' %}">CONTACT</a></li>
+          <li><a href="{% url 'philosophy' %}">PHILOSOPHY</li>
+          <li><a href="{% url 'about' %}">ABOUT</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <div id="pageBody">
+
+      <div class="mainVisual">
+        <!--写真-->
+        <ul class="bxslider">
+          <li><img src="{% static "/images/img_01.jpg" %}" width="900" height="600" alt=""></li>
+          <li><img src="{% static "/images/img_02.jpg" %}" width="900" height="600" alt=""></li>
+          <li><img src="{% static "/images/img_03.jpg" %}" width="900" height="600" alt=""></li>
+          <li><img src="{% static "/images/img_04.jpg" %}" width="900" height="600" alt=""></li>
+          <li><img src="{% static "/images/img_05.jpg" %}" width="900" height="600" alt=""></li>
+          <li><img src="{% static "/images/img_06.jpg" %}" width="900" height="600" alt=""></li>
+          <li><img src="{% static "/images/img_07.jpg" %}" width="900" height="600" alt=""></li>
+        </ul>
+      </div>
+    </div>
+
+    <footer id="pageFoot">
+      <!--コピーライト-->
+      <p id="copyright"><small>Copyright (C) 2017 INIAD MENETER official web site All Rights Reserved.</small></p>
+    </footer>
+
+  </div>
+
+</body>
+
+</html>

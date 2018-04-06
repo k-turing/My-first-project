@@ -1,0 +1,50 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>INIAD MENTER| ABOUT</title>
+  <meta name="description" content="伊藤皓太朗の紹介ページです。">
+  <link rel="stylesheet" href="static/css/style.css">
+  <link rel="stylesheet" href="static/css/normalize.css">
+
+</head>
+
+<body>
+
+  <div id="page">
+
+    <header id="pageHead">
+      <h1 id="siteTitle"><a href="{% url 'about' %}"><b>ABOUT</b></a></h1>
+      <nav class="glovalNavi">
+        <ul>
+          <li><a href="{% url 'index' %}">HOME</a></li>
+          <li><a href="{% url 'menter' %}">MENTER</a></li>
+          <li><a href="{% url 'comment' %}">COMMENT</a></li>
+          <li><a href="{% url 'contact' %}">CONTACT</a></li>
+          <li><a href="{% url 'philosophy' %}">PHILOSOPHY</li>
+          <li class="current"><a href="{% url 'about' %}">ABOUT</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <div id="pageBody">
+
+      <div id="content">
+        <h1>Who I am</h1>
+        <p>Affiliation of Toyo University Information Networking for Innovation and Design.<br>Skill: HTML CSS Python JavaScript Django sqlite</p>
+        <p>東洋大学情報連携学部所属<br>WEB系スキル: HTML CSS Python JavaScript Django sqlite</p>
+      </div>
+
+    </div>
+
+      <footer id="pageFoot">
+        <p id="copyright"><small>Copyright (C) 2017 INIAD MENETER official web site All Rights Reserved.</small></p>
+      </footer>
+
+    </div>
+
+</body>
+
+</html>

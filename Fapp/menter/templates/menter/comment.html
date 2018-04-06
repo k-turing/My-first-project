@@ -1,0 +1,98 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="static/css/style.css">
+  <link rel="stylesheet" href="static/css/normalize.css">
+  <script type="text/javascript">
+    //auto expand textarea
+    function adjust_textarea(h) {
+      h.style.height = "20px";
+      h.style.height = (h.scrollHeight) + "px";
+    }
+  </script>
+  <title>INIAD MENTER | COMMENT</title>
+</head>
+
+<body>
+
+  <div id="page">
+
+    <header id="pageHead">
+      <!--タイトル-->
+      <h1 id="siteTitle"><a href="{% url 'comment' %}"><b>COMMENT</b></a></h1>
+      <!--各ページへのリンク-->
+      <nav class="glovalNavi">
+        <ul>
+          <li><a href="{% url 'index' %}">HOME</a></li>
+          <li><a href="{% url 'menter' %}">MENTER</a></li>
+          <li class="current"><a href="{% url 'comment' %}">COMMENT</a></li>
+          <li><a href="{% url 'contact' %}">CONTACT</a></li>
+          <li><a href="{% url 'philosophy' %}">PHILOSOPHY</li>
+          <li><a href="{% url 'about' %}">ABOUT</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <div id="pageBody">
+
+      <!--コメント部分-->
+
+      <div id="content">
+        <div>
+          <!--h1>Django Sample Application</h1>
+            <p>You can submit articles from the following form.</p-->
+          <form action="{% url 'comment' %}" method="post">
+            {% csrf_token %}
+            <div class="form-group">
+              <label for="titleInput">Title</label>
+              <input id="titleInput" name="title" class="form-control" type="text" placeholder="Input title">
+            </div>
+            <div class="form-group">
+              <label for="textInput">Text</label>
+              <textarea id="textInput" name="text" class="form-control" rows="3" placeholder="Input text"></textarea>
+            </div>
+            <div class="form-group">
+              <button type="submit" class="btn Paper paper-raise paper-raise-flatten">Submit</button>
+            </div>
+          </form>
+        </div>
+
+        <div class="pull-right">
+          <a href="{% url 'comment' %}?sort=date">Sort by date</a>
+          <!--a href="{% url 'comment' %}?sort=like">Sort by <span class="glyphicon glyphicon-thumbs-up"></span></a-->
+        </div>
+        <br> {% if articles %} {% for article in articles %}
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <a href="{% url 'detail' article.id %}">{{ article.title }}</a>
+            <small>[{{ article.posted_at }}]</small>
+            <!--div class="pull-right">
+              <a href="{% url 'detail' article.id %}" class="btn btn-default btn-xs">
+                      <span class="glyphicon glyphicon-thumbs-up"></span>
+                      {{ article.like }}
+                    </a>
+            </div-->
+          </div>
+          <div class="panel-body">
+            {{ article.text | linebreaksbr }}
+          </div>
+        </div>
+        {% endfor %} {% else %}
+        <p>No article.</p>
+        {% endif %}
+      </div>
+
+    </div>
+
+    <footer id="pageFoot">
+      <p id="copyright"><small>Copyright (C) 2017 INIAD Menter official web site All Rights Reserved.</small></p>
+    </footer>
+
+  </div>
+
+</body>
+
+</html>

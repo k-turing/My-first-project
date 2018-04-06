@@ -1,0 +1,133 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>INIAD MENTER | MENTER</title>
+  <link rel="stylesheet" href="static/css/style.css">
+  <link rel="stylesheet" href="static/css/normalize.css">
+  <script src="static/js/jquery-1.10.1.min.js"></script>
+  <script>
+    $(function() {
+      $(".open").on("click", function() {
+        $(this).parent('th').nextAll('td').find('.course').toggle();
+        $(this).hide();
+        $(this).next().show();
+      });
+      $(".close").on("click", function() {
+        $(this).parent('th').nextAll('td').find('.course').toggle();
+        $(this).hide();
+        $(this).prev().show();
+      });
+    });
+  </script>
+</head>
+
+<body>
+
+  <div id="page">
+
+    <header id="pageHead">
+      <!--タイトル-->
+      <h1 id="siteTitle"><a href="{% url 'menter' %}"><b>MENTER</b></a></h1>
+      <!--各ページへのリンク-->
+      <nav class="glovalNavi">
+        <ul>
+          <li><a href="{% url 'index' %}">HOME</a></li>
+          <li class="current"><a href="{% url 'menter' %}">MENTER</a></li>
+          <li><a href="{% url 'comment' %}">COMMENT</a></li>
+          <li><a href="{% url 'contact' %}">CONTACT</a></li>
+          <li><a href="{% url 'philosophy' %}">PHILOSOPHY</li>
+          <li><a href="{% url 'about' %}">ABOUT</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <div id="pageBody">
+
+      <!--メンターの一覧-->
+      <div id="content">
+        <table>
+          <tbody>
+            <tr>
+              <td class="border0"></td>
+              <th class="free">所属コース</th>
+              <th class="pro">学年とスキル</th>
+            </tr>
+            <tr>
+              <th>伊藤皓太朗<a href="#" class="open">＋</a><a href="#" class="close">－</a></th>
+              <td>エンジニアリング</td>
+              <td>２年生
+                <br />
+                <dl class="course">
+                  <p>HTML</p>
+                  <p>CSS</p>
+                  <p>Javascript</p>
+                  <p>Python</p>
+                  <p>Django</p>
+                  <p>sqlite3</p>
+                </dl>
+              </td>
+            </tr>
+            <tr>
+              <th>メンター２<a href="#" class="open">＋</a><a href="#" class="close">－</a></th>
+              <td>デザイン</td>
+              <td>２年生
+                <br />
+                <dl class="course">
+                  <p>HTML</p>
+                  <p>CSS</p>
+                  <p>Javascript</p>
+                  <p>Python</p>
+                  <p>Django</p>
+                  <p>sqlite3</p>
+                </dl>
+              </td>
+            </tr>
+            <tr>
+              <th>メンター３<a href="#" class="open">＋</a><a href="#" class="close">－</a></th>
+              <td>ビジネス</td>
+              <td>２年生
+                <br />
+                <dl class="course">
+                  <p>HTML</p>
+                  <p>CSS</p>
+                  <p>Javascript</p>
+                  <p>Python</p>
+                  <p>Django</p>
+                  <p>sqlite3</p>
+                </dl>
+              </td>
+            </tr>
+            <tr>
+              <th>メンター３<a href="#" class="open">＋</a><a href="#" class="close">－</a></th>
+              <td>シビルシステム</td>
+              <td>２年生
+                <br />
+                <dl class="course">
+                  <p>HTML</p>
+                  <p>CSS</p>
+                  <p>Javascript</p>
+                  <p>Python</p>
+                  <p>Django</p>
+                  <p>sqlite3</p>
+                </dl>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+
+      </div>
+
+    </div>
+
+    <footer id="pageFoot">
+      <p id="copyright"><small>Copyright (C) 2017 INIAD Menter official web site All Rights Reserved.</small></p>
+    </footer>
+
+  </div>
+
+</body>
+
+</html>

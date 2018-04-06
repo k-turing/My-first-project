@@ -1,0 +1,57 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="static/css/style.css">
+  <link rel="stylesheet" href="static/css/normalize.css">
+  <title>INIAD MENTER | DETAIL</title>
+</head>
+
+<body>
+
+  <div id="page">
+
+    <header id="pageHead">
+      <!--タイトル-->
+      <h1 id="siteTitle"><b>DETAIL</b></h1>
+      <!--各ページへのリンク-->
+      <nav class="glovalNavi">
+        <ul>
+          <li><a href="{% url 'index' %}">HOME</a></li>
+          <li><a href="{% url 'menter' %}">MENTER</a></li>
+          <li><a href="{% url 'comment' %}">COMMENT</a></li>
+          <li><a href="{% url 'contact' %}">CONTACT</a></li>
+          <li><a href="{% url 'philosophy' %}">PHILOSOPHY</li>
+          <li><a href="{% url 'about' %}">ABOUT</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <div id="pageBody">
+
+      <div id="content">
+
+        <!--ディテール部分-->
+
+        <h1 class="page-header">{{ article.title }}</h1>
+        <small>[{{ article.posted_at }}]</small>
+        <div class="panel panel-default">
+          <div class="panel-body">
+            {{ article.text | linebreaksbr }}
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <footer id="pageFoot">
+      <p id="copyright"><small>Copyright (C) 2017 INIAD Menter official web site All Rights Reserved.</small></p>
+    </footer>
+
+  </div>
+
+</body>
+
+</html>

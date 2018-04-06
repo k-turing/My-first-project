@@ -1,0 +1,64 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>INIAD MENTER| Philosophy</title>
+  <meta name="description" content="伊藤皓太朗の紹介ページです。">
+  <link rel="stylesheet" href="static/css/style.css">
+  <link rel="stylesheet" href="static/css/normalize.css">
+
+</head>
+
+<body>
+
+  <div id="page">
+
+    <header id="pageHead">
+      <h1 id="siteTitle"><a href="{% url 'philosophy' %}"><b>PHILOSOPHY</b></a></h1>
+      <nav class="glovalNavi">
+        <ul>
+          <li><a href="{% url 'index' %}">HOME</a></li>
+          <li><a href="{% url 'menter' %}">MENTER</a></li>
+          <li><a href="{% url 'comment' %}">COMMENT</a></li>
+          <li><a href="{% url 'contact' %}">CONTACT</a></li>
+          <li class="current"><a href="{% url 'philosophy' %}">PHILOSOPHY</li>
+          <li><a href="{% url 'about' %}">ABOUT</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <div id="pageBody">
+
+      <div id="content">
+        <h1>Our Philosophy</h1>
+        <p>Beautiful is better than ugly.
+          <br>Explicit is better than implicit.
+          <br>Simple is better than complex.
+          <br>Complex is better than complicated.
+          <br>Flat is better than nested.
+          <br>Sparse is better than dense.
+          <br>Readability counts.
+          <br>Special cases aren't special enough to break the rules.
+          <br>Although practicality beats purity.
+          <br>Errors should never pass silently.
+          <br>Unless explicitly silenced.
+          <br>In the face of ambiguity, refuse the temptation to guess.
+          <br>There should be one--and preferably only one--obvious way to do it. Although that way may not be obvious at first unless you're Dutch. Now is better than never.
+          <br>Although never is often better than *right* now.
+          <br>If the implementation is hard to explain, it's a bad idea.
+          <br>If the implementation is easy to explain, it may be a good idea. Namespaces are one honking great idea--let's do more of those!</p>
+      </div>
+
+    </div>
+
+    <footer id="pageFoot">
+      <p id="copyright"><small>Copyright (C) 2017 INIAD MENETER official web site All Rights Reserved.</small></p>
+    </footer>
+
+  </div>
+
+</body>
+
+</html>
